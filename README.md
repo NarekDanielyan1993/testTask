@@ -9,6 +9,14 @@ Cart Module: Manages the items added to the cart. It includes a cart list and a 
 
 Running the Application
 
+Clone the application from git@github.com:NarekDanielyan1993/testTask.git
+Go the root of the project and run following command:
+npm install
+
+add .env.local file in the root directory with the following variable
+
+NEXT_PUBLIC_SERVER_BASE_URL=http://o-complex.com:1337
+
 To run the application in development mode:
 npm run dev
 To run the application in production mode: 1. npm run build 2. npm start
