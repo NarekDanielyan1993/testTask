@@ -7,4 +7,5 @@ export const StyledLayout = styled('div')(({ theme }) => ({
     alignItems: 'center',
     maxWidth: '75rem',
     margin: `${theme.spacing(18)} auto`,
+    paddingInline: '3vw',
 }));

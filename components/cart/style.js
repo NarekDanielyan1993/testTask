@@ -7,6 +7,7 @@ export const StyledCart = styled('div')(({ theme }) => ({
     padding: theme.spacing(1.5),
     backgroundColor: theme.palette.secondary.darken,
     borderRadius: theme.spacing(2),
+    marginBottom: theme.spacing(5),
 }));
 
 export const StyledCartHeader = styled(Typography)(({ theme }) => ({

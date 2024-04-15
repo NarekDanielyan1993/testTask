@@ -2,12 +2,13 @@ import { styled } from '@mui/material/styles';
 
 export const StyledCartForm = styled('form')(({ theme }) => ({
     display: 'flex',
+    flexWrap: 'wrap',
     alignItems: 'stretch',
     gap: theme.spacing(2),
-    '&:last-child': {
+    '& > *': {
         flexGrow: 1,
     },
-    '&:first-child': {
-        flexBasis: theme.spacing(50),
+    '& .MuiFormControl-root': {
+        width: theme.spacing(43),
     },
 }));

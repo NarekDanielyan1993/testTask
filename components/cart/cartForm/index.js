@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import MaskedField from 'components/Field/maskedField';
 import { StyledCartForm } from 'components/cart/cartForm/style';
 import { RUSSIAN_PHONE_MASK } from 'constant';
@@ -35,30 +34,28 @@ const CartForm = () => {
         phoneChangeHandler(data.target.value);
     };
     return (
-        <Box display="flex" gap={2} position="relative">
+        // <Box display="flex" gap={2} position="relative">
+        <FormProvider {...methods}>
             {isLoading && <Loader />}
-            <FormProvider {...methods}>
-                <StyledCartForm
-                    onChange={formChangeHandler}
-                    onSubmit={handleSubmit(formSubmitHandler)}
+            <StyledCartForm
+                onChange={formChangeHandler}
+                onSubmit={handleSubmit(formSubmitHandler)}
+            >
+                <MaskedField
+                    disabled={!(cartProducts?.length > 0)}
+                    mask={RUSSIAN_PHONE_MASK}
+                    name="phone"
+                />
+                <Button
+                    disabled={!(formState.isValid && cartProducts?.length > 0)}
+                    type="submit"
+                    className="submit"
                 >
-                    <MaskedField
-                        disabled={!(cartProducts?.length > 0)}
-                        mask={RUSSIAN_PHONE_MASK}
-                        name="phone"
-                    />
-                    <Button
-                        disabled={
-                            !(formState.isValid && cartProducts?.length > 0)
-                        }
-                        type="submit"
-                        className="submit"
-                    >
-                        заказать
-                    </Button>
-                </StyledCartForm>
-            </FormProvider>
-        </Box>
+                    заказать
+                </Button>
+            </StyledCartForm>
+        </FormProvider>
+        // </Box>
     );
 };
 

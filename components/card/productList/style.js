@@ -6,5 +6,4 @@ export const StyledCardContainer = styled('div')(({ theme }) => ({
     flexWrap: 'wrap',
     gap: theme.spacing(2),
     maxWidth: theme.spacing(150),
-    margin: `${theme.spacing(5)} auto`,
 }));
